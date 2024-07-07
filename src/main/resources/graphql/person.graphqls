@@ -1,0 +1,42 @@
+type Query{
+
+    getAllPerson : [Person]
+    findPerson(email: String) : Person
+
+    allBooks:[Book]
+    getBook(bookId:Int):Book
+}
+
+type Mutation{
+    createBook(bookInput:BookInput):Book
+}
+
+
+type Book{
+
+    id:ID!
+    title:String
+    desc:String
+    author:String
+    price:Float
+    pages:Int
+
+
+}
+
+input BookInput{
+    title:String
+    desc:String
+    author:String
+    price:Float
+    pages:Int
+}
+
+type Person{
+
+    id: String
+    name: String
+    mobile: String
+    email: String
+    address: [String]
+}
